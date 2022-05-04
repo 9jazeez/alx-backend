@@ -7,5 +7,8 @@ def index_range(page, page_size):
 	 -page size
 	 returns a tuple.
 	"""
-	tup = (page, page_size)
+	if page and page_size:
+		st_index = (page - 1) * page_size
+		end = st_index + page_size
+	tup = (st_index, end)
 	return tup
